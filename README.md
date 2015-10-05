@@ -12,7 +12,7 @@ fog is a online map, where speakers of other languages can share theire experien
 
 Make sure you have the latest version of python 2.7 or python 3.4 installed.
 
-#### PIP, virtualenvwrapper
+#### pip, virtualenvwrapper
 
 If you want to setup and start the backend, you have to install django and it's requirements. To do so, it is recommended to install and use the python package manager `pip`. For the installation, you need root privileges:
 
