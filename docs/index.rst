@@ -1,8 +1,8 @@
 ***********************************************************
-Welcome to fog's documentation!
+Welcome to Foreigners Online Guide's documentation!
 ***********************************************************
 
-a foreigners online guide
+A short description of the project.
 
 Contents:
 
@@ -10,7 +10,10 @@ Contents:
    :maxdepth: 2
 
    installation
+   settings
+   releases
    deployment
+   contributing
 
 Indices and tables
 ==================

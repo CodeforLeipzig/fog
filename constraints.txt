@@ -1,0 +1,4 @@
+# This file sets constraints for pip to prevent packages to install
+# dependencies with other versions as the pinned ones in our
+# requirements files
+Django==1.8.7

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# fog documentation build configuration file.
+# Foreigners Online Guide documentation build configuration file.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -14,6 +14,8 @@
 import sys
 import os
 
+import alabaster
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -22,7 +24,7 @@ import os
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#needs_sphinx = '1.0'
+needs_sphinx = '1.3'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -30,6 +32,7 @@ import os
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.ifconfig',
+    'alabaster',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -45,8 +48,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'fog'
-copyright = u'2015, Max brauer <max@max-brauer.de>'
+project = u'Foreigners Online Guide'
+copyright = u'2015, Max Brauer <max@max-brauer.de>'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -100,15 +103,31 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
-
+html_theme_options = {
+    # Relative path (from $PROJECT/_static/) to a logo image, which will appear
+    # in the upper left corner above the name of the project.
+    # 'logo': 'logo.png',
+    'logo_name': True,
+    'description': '',
+    'github_user': 'CodeforLeipzig',
+    'github_repo': 'fog',
+    'github_button': True,
+    'github_banner': False,
+    'travis_button': False,
+    'extra_nav_links': {
+        'CodeCov': 'http://codecov.io/github/CodeforLeipzig/fog?branch=develop',
+        'requires.io': 'https://requires.io/github/CodeforLeipzig/fog/requirements/?branch=develop',
+    },
+    'analytics_id': '',
+    'show_related': False,
+}
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = [alabaster.get_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -145,7 +164,15 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {
+    '**': [
+        'about.html',
+        'navigation.html',
+        'relations.html',
+        'searchbox.html',
+        'donate.html',
+    ]
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -198,8 +225,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'fog.tex', u'fog Documentation',
-   u'Max brauer <max@max-brauer.de>', 'manual'),
+  ('index', 'fog.tex', u'Foreigners Online Guide Documentation',
+   u'Max Brauer <max@max-brauer.de>', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -228,8 +255,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'fog', u'fog Documentation',
-     [u'Max brauer <max@max-brauer.de>'], 1)
+    ('index', 'fog', u'Foreigners Online Guide Documentation',
+     [u'Max Brauer <max@max-brauer.de>'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -242,8 +269,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'fog', u'fog Documentation',
-   u'Max brauer <max@max-brauer.de>', 'fog', 'a foreigners online guide',
+  ('index', 'fog', u'Foreigners Online Guide Documentation',
+   u'Max Brauer <max@max-brauer.de>', 'Foreigners Online Guide', 'A short description of the project.',
    'Miscellaneous'),
 ]
 
@@ -258,3 +285,8 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+linkcheck_ignore = [
+    # Uncomment the next line if the repository on GitHub is private.
+    #r'https://github.com/CodeforLeipzig/fog.*',
+]

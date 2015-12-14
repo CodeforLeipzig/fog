@@ -55,7 +55,7 @@ You now see your prompt prefixed with the current virtualenv. You can deactivate
 To install all requirements and its dependencies, just run the following command:
 
 ```
-make install
+make develop
 ```
 
 ### setup database
@@ -63,6 +63,7 @@ make install
 To setup the database, there is also a make target:
 
 ```
+make create-db-user
 make create-db
 ```
 
