@@ -31,7 +31,7 @@ setup(
     name='fog',
     version='0.1.0',
     description='a foreigners online guide',
-    long_description=read(BASE_DIR, 'README.rst'),
+    long_description=read(BASE_DIR, 'README.md'),
     author='Max brauer <max@max-brauer.de>',
     author_email='max@max-brauer.de',
     packages=find_packages(),
